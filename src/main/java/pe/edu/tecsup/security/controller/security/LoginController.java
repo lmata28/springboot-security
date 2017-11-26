@@ -17,7 +17,7 @@ public class LoginController {
 
         SecurityContext cntx = SecurityContextHolder.getContext();
         Authentication auth = cntx.getAuthentication();
-
+//si el usuario esta autenticado
         if (auth instanceof UsernamePasswordAuthenticationToken) {
             return "redirect:/index";
         }

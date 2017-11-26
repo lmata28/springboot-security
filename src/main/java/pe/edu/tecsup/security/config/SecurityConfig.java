@@ -24,6 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/index").fullyAuthenticated()
                 .antMatchers("/**").permitAll();
 
+        //Formulario de autenticacion
         http.formLogin()
                 .loginPage("/login")
                 .successForwardUrl("/index")
@@ -32,9 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.logout().logoutSuccessUrl("/");
         http.sessionManagement().invalidSessionUrl("/");
-        http.exceptionHandling().accessDeniedPage("/");
+        http.exceptionHandling().accessDeniedPage("/");//ventas ingresa a adm
         
-        http.csrf().disable();
+        http.csrf().disable();//tema de seguridad
 
     }
 
